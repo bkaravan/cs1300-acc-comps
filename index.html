@@ -11,135 +11,135 @@
         <h1>Searching the Web</h1>
     </header>
     <div class="section">
-        <p>I have never thought much of a simple component that I interact with daily - whether it's YouTube, Wiki, Google Drive or Twitch - a search bar. Everything now has a search bar
+        <p>I have never thought much of a search bar component that I interact with daily - whether it's YouTube, Wiki, Google Drive or Twitch. Everything now has a search bar
             and it felt straightforward to use from day one. However, I also realized that I never experienced a mismatch in its design: I am a daily mouse and keyboard user. If you remove 
             one of them, how hard can it get? My intuition told me that it shouldn't be a problem, so today, we will explore how accessible a simple search bar is. 
         </p>
     </div>
-    <div class="section">
-        <div class="text">
-            <h2>Input checking</h2>
-            <p>The first part of the experiment is to try out the search bars accross different environments. I chose the ones that I use most often, Google Drive, YouTube, and Twitch TV searches. 
-                To measure their accessability, I gave all of them a go with using primarely mouse/touchpad, keyboard, or a touchscreen. My main focus points were general component behavior, capabilities, 
-            how easy it is to learn and use, and how accessible it felt. You can find the report in the table below </p>
-        </div>
-        <div class="table">
-            <table border="1">
-                <tr>
-                    <th></th>
-                    <th>Google Drive</th>
-                    <th>Twitch TV</th>
-                    <th>YouTube</th>
-                </tr>
-                <tr>
-                    <td>Mouse/Touchpad</td>
-                    <td>Easy to find, hover underscores slighlty
-                        No way to search without a keyboard input. Text is not droppable. No right click
-                        The built-in “search in Drive” text makes  it learnable; efficient 
-                        Bad option for pure mouse/touchpad
-                        </td>
-                    <td>More highlight when search bar is active, recent prompts when clicked
-                        Mouse paste works, basic right click support
-                        Prompt search helps learnability, efficient, easy to recall
-                        Usable with mouse/touchpad only users. Draggable text
-                        </td>
-                    <td>Slight highlight similar to drive, recent pop-ups like with TTV
-                        Mouse right click works, paste works
-                        Same functions as TTV, “enter query” helps learn
-                        Best: has a keyboard icon that lets enter letters. Draggable text
-                        </td>
-                </tr>
-                <tr>
-                    <td>Keyboard</td>
-                    <td>Intuitive to start, made for keyboard inputs
-                        Can copy/paste with Ctrl C/Ctrl V. ESC doesn’t stop text, page up/down shortcuts disable the window
-                        Same points as for mouse, learnable and easy to recall
-                        Tab focuses relatively quickly. After the first search, a bit awkward ordering of search button -> cancel button -> search text
-                        </td>
-                    <td>Top of the page, easy to use with keyboard
-                        Same as with google drive, shortcuts work, ESC doesn’t exit, page up/down disabled
-                        Recent history makes it more learnable
-                        Tab focuses within a couple of attempts. No changes after first search
-                        </td>
-                    <td>Same comments, top of the page, easy to find
-                        Same as TTV but page up/down work, but still highlight the window
-                        Same as TTV. Good balance across all three.
-                        Tab gets there quickly. Tab position is not preserved across searches, unlike Twitch
-                        </td>
-                </tr>
-                <tr>
-                    <td>Touch</td>
-                    <td>Top of the app, easy to find, slightly different buttons
-                        After entering search words, can’t browse for other files. Uses more learnable filters
-                        Still intuitive, but relies on familiarity with this kind of search bar
-                        Nothing noteworthy for accessability
-                        </td>
-                    <td>New update made it horrible to find. Need to find a search button at the bottom and then it appears at the top
-                        No live video prompts while searching
-                        New update threw away learnability (as a user of multiple years, I could not find the search bar for a good minute)
-                        Nothing noteworthy
-                        </td>
-                    <td>Search bar is hidden on main page, need to find the loop icon to start
-                        As drive, can’t look for other videos while searching
-                        Not very learnable for new users since it’s hidden
-                        Has a voice input option
-                        </td>
-                </tr>
-            </table>
+    <div class="section flip-container">
+        <div class="flipper">
+            <div class="front">
+                <div class="text">
+                    <h2>Input checking</h2>
+                    <p>The first part of the experiment is to try out the search bars accross different environments. I chose the ones that I use most often, Google Drive, YouTube, and Twitch TV searches. 
+                        To measure their accessability, I gave all of them a go with using primarely mouse/touchpad, keyboard, or a touchscreen. My main focus points were general component behavior, capabilities, 
+                    how easy it is to learn and use, and how accessible it felt. You can find the report in the table on the other side.</p>
+                    <div class="flip-controls">
+                        <button class="flip-btn" aria-label="Flip to data table">Flip to data table</button>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="table">
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th>Google Drive</th>
+                            <th>Twitch TV</th>
+                            <th>YouTube</th>
+                        </tr>
+                        <tr>
+                            <td>Mouse/Touchpad</td>
+                            <td>
+                                No way to search without a keyboard input. Text is not droppable. No right click
+                                </td>
+                            <td>Recent prompts when clicked.
+                                Mouse paste works.
+                                Draggable text
+                                </td>
+                            <td>Mouse right click works, paste works, draggable text.
+                                Has a keyboard icon that lets enter letters.
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Keyboard</td>
+                            <td>ESC doesn't stop text.
+                                Tab focus search button -> cancel button -> search text
+                                </td>
+                            <td>
+                                Recent history makes it more learnable
+                                Tab focuses within a couple of attempts
+                                </td>
+                            <td>Page up/down still highlight search
+                                Tab position is not preserved across searches
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Touch</td>
+                            <td>
+                                After entering search words, can't browse for other files.
+                                </td>
+                            <td>Hard to find and learn. Click search at the bottom and then it appears at the top
+                                </td>
+                            <td>Need to find the loop icon to start search
+                                Has a voice input option
+                                </td>
+                        </tr>
+                    </table>
+                    <div class="flip-controls">
+                        <button class="flip-btn" aria-label="Return to text">Return to Text</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="section">
-        <div class="table">
-            <table border="1">
-                <tr>
-                    <th></th>
-                    <th>Google Drive</th>
-                    <th>Twitch TV</th>
-                    <th>YouTube</th>
-                </tr>
-                <tr>
-                    <td>Visual</td>
-                    <td>Slight highlight of the search bar
-                        Keystrokes appear as you type
-                        Prompts appear under search bar                        
-                        </td>
-                    <td>Strong purple highlight in use
-                        Keystrokes appear as you type
-                        Prompts appear right away and calibrate based on text                        
-                        </td>
-                    <td>Slight highlight in use
-                        Keystrokes appear
-                        Similar and related searches pop up under                        
-                        </td>
-                </tr>
-                <tr>
-                    <td>Alt Text/Screen reader</td>
-                    <td>Miserable experience
-                        The first time the page loads, screen reader stops, need to manually adjust to the main page
-                        Ordering of search buttons is confusing
-                        Not clear what search results gave after pressing enter
-                        As you type, reads out suggested dropdowns                        
-                        </td>
-                    <td>It might be a windows reader problem, but I could not even type with this reader enabled, there were no tips how to do it either
-                        A bit better than drive, but still hard to navigate                        
-                        </td>
-                    <td>No info after page loading
-                        Very poor description of the search bar (combo input, scan of space?)
-                        Could not use arrows to help with search after typing
-                        No info on suggested videos                        
-                        </td>
-                </tr>
-                <tr>
-                    <td>Other outputs</td>
-                    <td>Read out every person who was on the doc, which was not needed</td>
-                    <td>Read out a lot of unneeded information (combo-input, scan of space?)</td>
-                    <td>Read out a lot of unneeded information (combo-input, scan of space?)</td>
-                </tr>
-            </table>
-        </div>
-        <div class="text">
-            <h2>Output time</h2>
-            <p>Content for section 2. <a href="#">Figma Reference</a></p>
+    <div class="section flip-container">
+        <div class="flipper">
+            <div class="front">
+                <div class="text">
+                    <h2>Output time</h2>
+                    <p>When analyzing search interfaces, it's equally important to examine how screen readers and other assistive technologies interpret the output. The table on the reverse side shows how different search interfaces support visual feedback and screen reader compatibility.</p>
+                    <div class="flip-controls">
+                        <button class="flip-btn" aria-label="Flip to data table">Flip to data table</button>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="table">
+                    <table border="1">
+                        <tr>
+                            <th></th>
+                            <th>Google Drive</th>
+                            <th>Twitch TV</th>
+                            <th>YouTube</th>
+                        </tr>
+                        <tr>
+                            <td>Visual</td>
+                            <td>Keystrokes appear as you type.
+                                Prompts appear under search bar                        
+                                </td>
+                            <td>Strong purple highlight.
+                                Prompts appear and change based on text                        
+                                </td>
+                            <td>Slight highlight in use.
+                                Similar and related searches pop up under                        
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Alt Text/Screen reader</td>
+                            <td>Screen reader stops after first load.
+                                Ordering of search buttons is confusing.
+                                Not clear what search results gave after pressing enter.                    
+                                </td>
+                            <td>Sometimes disables typing.
+                                Still hard to navigate                        
+                                </td>
+                            <td>Very poor description of the search bar 
+                                No info on suggested videos                        
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>Other outputs</td>
+                            <td>Read out every person who was on the doc, which was not needed</td>
+                            <td>Read out a lot of unneeded information (combo-input, scan of space?)</td>
+                            <td>Same as TTV</td>
+                        </tr>
+                    </table>
+                    <div class="flip-controls">
+                        <button class="flip-btn" aria-label="Return to text">Return to Text</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="section">
@@ -163,5 +163,7 @@
     <footer>
         <p>&copy; 2025 Bohdan Karavan</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

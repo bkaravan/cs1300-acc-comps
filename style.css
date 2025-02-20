@@ -12,6 +12,7 @@ header {
 }
 .section {
     display: flex;
+    font-size: 25px;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -22,9 +23,10 @@ header {
     max-width: 1600px;
 }
 
-.section-vert {
+.section-start {
     display: flex;
     align-items: center;
+    font-size: 25px;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
@@ -37,20 +39,19 @@ header {
 }
 
 .table {
-    /* width: 100%; Takes full width of .section-vert */
+    width: 100%;
     border-collapse: collapse;
     margin: 0 auto; /* Centers the table */
 }
 
-
 .table th, 
 .table td {
     max-width: 300px; /* Set max width for each cell */
-    overflow: hidden;
-    /* text-overflow: ellipsis; Adds '...' for overflowing text */
-    /* white-space: nowrap; Prevents text from wrapping */
+    overflow: auto;
     padding: 8px;
     border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
 }
 
 .text, .image {
@@ -66,4 +67,96 @@ footer {
     padding: 10px;
     background: #333;
     color: white;
+}
+
+/* Flip Container Styles */
+.flip-container {
+    perspective: 1000px;
+    height: auto;
+    min-height: 300px;
+}
+
+.flipper {
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 60%;
+    height: 100%;
+}
+
+.flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background: white;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: white;
+    overflow-x: auto;
+}
+
+/* Flip button styles */
+.flip-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.flip-btn {
+    background-color: #4c7eff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.flip-btn:hover {
+    background-color: #3a6ad9;
+}
+
+.flip-btn:focus {
+    outline: 2px solid #0044cc;
+    outline-offset: 2px;
+}
+
+/* For accessibility */
+.flip-container:focus-within {
+    outline: 2px solid #0044cc;
+    outline-offset: 4px;
+}
+
+/* Make sure the front and back have appropriate heights */
+.flip-container .front, 
+.flip-container .back {
+    min-height: 300px;
+}
+
+/* For touch devices */
+@media (max-width: 768px) {
+    .front, .back {
+        min-height: 400px;
+    }
+    
+    .flip-btn {
+        padding: 12px 20px; /* Larger touch target */
+        font-size: 18px;
+    }
 }
