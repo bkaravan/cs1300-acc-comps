@@ -1,169 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessible Components</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Searching the Web</h1>
+      <h1 style="font-size: 50px">Searching the Web</h1>
     </header>
-    <div class="section">
-        <p>I have never thought much of a search bar component that I interact with daily - whether it's YouTube, Wiki, Google Drive or Twitch. Everything now has a search bar
-            and it felt straightforward to use from day one. However, I also realized that I never experienced a mismatch in its design: I am a daily mouse and keyboard user. If you remove 
-            one of them, how hard can it get? My intuition told me that it shouldn't be a problem, so today, we will explore how accessible a simple search bar is. 
+    <div class="section-start">
+      <div class="text">
+        <h2>The Question</h2>
+        <p style="width: 80%; margin-left: auto; margin-right: auto;">
+          I have never thought much of a search bar component that I interact
+          with daily - whether it's YouTube, Wiki, Google Drive or Twitch.
+          Everything now has a search bar and it felt straightforward to use
+          from day one. However, I also realized that I never experienced a
+          mismatch in its design: I am a daily mouse and keyboard user. If you
+          remove one of them, how hard can it get? My intuition told me that it
+          shouldn't be a problem, so today, we will explore how accessible a
+          simple search bar is.
         </p>
+      </div>
+      <div class="images-container">
+        <div class="images-row">
+          <div class="image expandable">
+            <img
+              src="pictures/drive.png"
+              alt="Google Drive search bar."
+              onclick="expandImage(this)"
+            />
+          </div>
+          <div class="image expandable">
+            <img
+              src="pictures/ttv.png"
+              alt="Twitch TV search bar."
+              onclick="expandImage(this)"
+            />
+          </div>
+          <div class="image expandable">
+            <img
+              src="pictures/YouTube.png"
+              alt="YouTube search bar."
+              onclick="expandImage(this)"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section flip-container">
-        <div class="flipper">
-            <div class="front">
-                <div class="text">
-                    <h2>Input checking</h2>
-                    <p>The first part of the experiment is to try out the search bars accross different environments. I chose the ones that I use most often, Google Drive, YouTube, and Twitch TV searches. 
-                        To measure their accessability, I gave all of them a go with using primarely mouse/touchpad, keyboard, or a touchscreen. My main focus points were general component behavior, capabilities, 
-                    how easy it is to learn and use, and how accessible it felt. You can find the report in the table on the other side.</p>
-                    <div class="flip-controls">
-                        <button class="flip-btn" aria-label="Flip to data table">Flip to data table</button>
-                    </div>
-                </div>
+      <div class="flipper">
+        <div class="front">
+          <div class="text">
+            <h2>Input checking</h2>
+            <p>
+              The first part of the experiment is to try out the search bars
+              accross different environments. I chose the ones that I use most
+              often, Google Drive, YouTube, and Twitch TV searches. To measure
+              their accessability, I gave all of them a go with using primarely
+              mouse/touchpad, keyboard, or a touchscreen. My main focus points
+              were general component behavior, capabilities, how easy it is to
+              learn and use, and how accessible it felt. You can find the report
+              in the table on the other side.
+            </p>
+            <div class="flip-controls">
+              <button class="flip-btn" aria-label="Flip to data table">
+                Flip to data table
+              </button>
             </div>
-            <div class="back">
-                <div class="table">
-                    <table border="1">
-                        <tr>
-                            <th></th>
-                            <th>Google Drive</th>
-                            <th>Twitch TV</th>
-                            <th>YouTube</th>
-                        </tr>
-                        <tr>
-                            <td>Mouse/Touchpad</td>
-                            <td>
-                                No way to search without a keyboard input. Text is not droppable. No right click
-                                </td>
-                            <td>Recent prompts when clicked.
-                                Mouse paste works.
-                                Draggable text
-                                </td>
-                            <td>Mouse right click works, paste works, draggable text.
-                                Has a keyboard icon that lets enter letters.
-                                </td>
-                        </tr>
-                        <tr>
-                            <td>Keyboard</td>
-                            <td>ESC doesn't stop text.
-                                Tab focus search button -> cancel button -> search text
-                                </td>
-                            <td>
-                                Recent history makes it more learnable
-                                Tab focuses within a couple of attempts
-                                </td>
-                            <td>Page up/down still highlight search
-                                Tab position is not preserved across searches
-                                </td>
-                        </tr>
-                        <tr>
-                            <td>Touch</td>
-                            <td>
-                                After entering search words, can't browse for other files.
-                                </td>
-                            <td>Hard to find and learn. Click search at the bottom and then it appears at the top
-                                </td>
-                            <td>Need to find the loop icon to start search
-                                Has a voice input option
-                                </td>
-                        </tr>
-                    </table>
-                    <div class="flip-controls">
-                        <button class="flip-btn" aria-label="Return to text">Return to Text</button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="back">
+          <div class="table">
+            <table border="1">
+              <tr>
+                <th></th>
+                <th>Google Drive</th>
+                <th>Twitch TV</th>
+                <th>YouTube</th>
+              </tr>
+              <tr>
+                <td>Mouse/Touchpad</td>
+                <td>
+                  No way to search without a keyboard input. Text is not
+                  droppable. No right click
+                </td>
+                <td>
+                  Recent prompts when clicked. Mouse paste works. Draggable text
+                </td>
+                <td>
+                  Mouse right click works, paste works, draggable text. Has a
+                  keyboard icon that lets enter letters.
+                </td>
+              </tr>
+              <tr>
+                <td>Keyboard</td>
+                <td>
+                  ESC doesn't stop text. Tab focus search button -> cancel
+                  button -> search text
+                </td>
+                <td>
+                  Recent history makes it more learnable Tab focuses within a
+                  couple of attempts
+                </td>
+                <td>
+                  Page up/down still highlight search Tab position is not
+                  preserved across searches
+                </td>
+              </tr>
+              <tr>
+                <td>Touch</td>
+                <td>
+                  After entering search words, can't browse for other files.
+                </td>
+                <td>
+                  Hard to find and learn. Click search at the bottom and then it
+                  appears at the top
+                </td>
+                <td>
+                  Need to find the loop icon to start search Has a voice input
+                  option
+                </td>
+              </tr>
+            </table>
+            <div class="flip-controls">
+              <button class="flip-btn" aria-label="Return to text">
+                Return to Text
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section flip-container">
-        <div class="flipper">
-            <div class="front">
-                <div class="text">
-                    <h2>Output time</h2>
-                    <p>When analyzing search interfaces, it's equally important to examine how screen readers and other assistive technologies interpret the output. The table on the reverse side shows how different search interfaces support visual feedback and screen reader compatibility.</p>
-                    <div class="flip-controls">
-                        <button class="flip-btn" aria-label="Flip to data table">Flip to data table</button>
-                    </div>
-                </div>
+      <div class="flipper">
+        <div class="front">
+          <div class="text">
+            <h2>Output time</h2>
+            <p>
+              When analyzing search interfaces, it's equally important to
+              examine how screen readers and other assistive technologies
+              interpret the output. The table on the reverse side shows how
+              different search interfaces support visual feedback and screen
+              reader compatibility.
+            </p>
+            <div class="flip-controls">
+              <button class="flip-btn" aria-label="Flip to data table">
+                Flip to data table
+              </button>
             </div>
-            <div class="back">
-                <div class="table">
-                    <table border="1">
-                        <tr>
-                            <th></th>
-                            <th>Google Drive</th>
-                            <th>Twitch TV</th>
-                            <th>YouTube</th>
-                        </tr>
-                        <tr>
-                            <td>Visual</td>
-                            <td>Keystrokes appear as you type.
-                                Prompts appear under search bar                        
-                                </td>
-                            <td>Strong purple highlight.
-                                Prompts appear and change based on text                        
-                                </td>
-                            <td>Slight highlight in use.
-                                Similar and related searches pop up under                        
-                                </td>
-                        </tr>
-                        <tr>
-                            <td>Alt Text/Screen reader</td>
-                            <td>Screen reader stops after first load.
-                                Ordering of search buttons is confusing.
-                                Not clear what search results gave after pressing enter.                    
-                                </td>
-                            <td>Sometimes disables typing.
-                                Still hard to navigate                        
-                                </td>
-                            <td>Very poor description of the search bar 
-                                No info on suggested videos                        
-                                </td>
-                        </tr>
-                        <tr>
-                            <td>Other outputs</td>
-                            <td>Read out every person who was on the doc, which was not needed</td>
-                            <td>Read out a lot of unneeded information (combo-input, scan of space?)</td>
-                            <td>Same as TTV</td>
-                        </tr>
-                    </table>
-                    <div class="flip-controls">
-                        <button class="flip-btn" aria-label="Return to text">Return to Text</button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="back">
+          <div class="table">
+            <table border="1">
+              <tr>
+                <th></th>
+                <th>Google Drive</th>
+                <th>Twitch TV</th>
+                <th>YouTube</th>
+              </tr>
+              <tr>
+                <td>Visual</td>
+                <td>
+                  Keystrokes appear as you type. Prompts appear under search bar
+                </td>
+                <td>
+                  Strong purple highlight. Prompts appear and change based on
+                  text
+                </td>
+                <td>
+                  Slight highlight in use. Similar and related searches pop up
+                  under
+                </td>
+              </tr>
+              <tr>
+                <td>Alt Text/Screen reader</td>
+                <td>
+                  Screen reader stops after first load. Ordering of search
+                  buttons is confusing. Not clear what search results gave after
+                  pressing enter.
+                </td>
+                <td>Sometimes disables typing. Still hard to navigate</td>
+                <td>
+                  Very poor description of the search bar No info on suggested
+                  videos
+                </td>
+              </tr>
+              <tr>
+                <td>Other outputs</td>
+                <td>
+                  Read out every person who was on the doc, which was not needed
+                </td>
+                <td>
+                  Read out a lot of unneeded information (combo-input, scan of
+                  space?)
+                </td>
+                <td>Same as TTV</td>
+              </tr>
+            </table>
+            <div class="flip-controls">
+              <button class="flip-btn" aria-label="Return to text">
+                Return to Text
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-start">
+      <div class="text">
+        <h2>State Models</h2>
+        <p style="width: 80%; margin-left: auto; margin-right: auto;">
+          Clearly, there is something to be improved here. While some problems
+          feel like nitpicking, the screen reader experience was upsetting
+          across the board. Let's take a look at how a typical YouTube search bar
+          interaction goes in a state model, and find a place for an enhanced
+          feature to help screen reader do better.
+        </p>
+        <p style="font-size: 18px">(click on images to expand)</p>
+      </div>
+      <div class="images-container">
+        <div class="images-row">
+          <div class="image expandable">
+            <img
+              src="pictures/keyboard.png"
+              alt="State diagram for a keyboard user."
+              onclick="expandImage(this)"
+            />
+          </div>
+          <div class="image expandable">
+            <img
+              src="pictures/mouse.png"
+              alt="State diagram for a mouse user."
+              onclick="expandImage(this)"
+            />
+          </div>
+        </div>
+        <div class="images-row">
+          <div class="image expandable">
+            <img
+              src="pictures/keboard_revised.png"
+              alt="Revised State diagram for a keyboard user."
+              onclick="expandImage(this)"
+            />
+          </div>
+          <div class="image expandable">
+            <img
+              src="pictures/mouse_revised.png"
+              alt="Revised State diagram for a mouse user."
+              onclick="expandImage(this)"
+            />
+          </div>
+        </div>
+        <div class="text">
+          <h2>Component Redesign</h2>
+          <p style="width: 80%; margin-left: auto; margin-right: auto;">
+            One particular point of frustration during the screen reader usage
+            was attempting to get to dynamic recommendations based on the query.
+            Pressing tab would sometimes skip it, and arrow keys could refuse to
+            work, even if prompts are on the screen. Perhaps, the design of the
+            page does not provide something for screen reader/tab system to
+            "attach to". My proposal: create a hardcoded recommendation line,
+            that's a part of the search bar. This way, the "recommendations" are
+            always there, and screen reader code can flow from one part of the
+            search bar (the actual search) to the recommendations window,
+            without skipping to the next element.
+          </p>
+        </div>
+        <div class="images-row">
+          <div class="image expandable">
+            <img
+              src="pictures/diagrams.png"
+              alt="Figma diagram for an enhanced search bar component."
+              onclick="expandImage(this)"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section">
-        <div class="text">
-            <h2>Section 3</h2>
-            <p>Content for section 3. <a href="#">Figma Reference</a></p>
-        </div>
-        <div class="image">
-            <img src="image3.jpg" alt="Image for section 3">
-        </div>
-    </div>
-    <div class="section">
-        <div class="image">
-            <img src="image4.jpg" alt="Image for section 4">
-        </div>
-        <div class="text">
-            <h2>Section 4</h2>
-            <p>Content for section 4. <a href="#">Figma Reference</a></p>
-        </div>
+      <div class="text">
+        <h2>Reflections on Inclusive Design</h2>
+        <p>
+          This part is inspired by the video
+          <a href="https://www.youtube.com/watch?v=-iccWRhKZa8&ab_channel=99U"
+            >Kat Holmes' Inclusive Design</a
+          >.
+        </p>
+        <h3>Usability and accessability</h3>
+        <p style="width: 70%; margin-left: auto; margin-right: auto;">
+          Google Drive was the only search bar that failed dragging text into
+          the box or right clicking on the bar and pasting the text. 
+          I would make sure to use a system that at least supports
+          dragging the text into the search bar or pasting by using the mouse.
+          Ideally, I would take YouTube’s idea and place a button that opens a
+          mini keyboard on the screen that you could use with a mouse.
+        </p>
+        <h3>Acessability considerations in my design</h3>
+        <p style="width: 70%; margin-left: auto; margin-right: auto;">
+          The screen reader was a pretty daunting experience across the board,
+          mostly because of its cryptic messaging and component order. In my
+          design, I tried to make it simple so that the screen reader doesn’t
+          get overwhelmed, but also added a small component that would help the
+          screen reader be more organized.
+        </p>
+        <h3>Solving for a mismatch</h3>
+        <p style="width: 72%; margin-left: auto; margin-right: auto;">
+          This particular mismatch is defined as a mismatch between human
+          interactions and design of the application. A mismatch that I
+          accounted for is the idea that most users are able to see the search
+          bar recommendations results, which is not always true, and screen 
+          reader is supposed to help with that!
+        </p>
+        <h3>Positive and Negative Scenarios</h3>
+        <p style="width: 70%; margin-left: auto; margin-right: auto;">
+          If a user with a visual impairment would try to use YouTube with a
+          screen reader, they would quickly find it nice that using tab gets
+          them to the search bar fairly quickly, which is a positive experience. 
+          However, if they would try to use the screen reader
+          to navigate to recommendations of the their current query, they could
+          find it extremely frustrating to find the dropdown
+          list without seeing it, which is a negative experience.
+        </p>
+        <h3>Who is the most commonly prioritized?</h3>
+        <p style="width: 70%; margin-left: auto; margin-right: auto;">
+          It is easy to understand that the most commonly prioritized components
+          are either touch screen (for mobile apps) or mouse/keyboard users.
+          Most people use a searchbar either on their phone or on a laptop,
+          where both the keyboard and mouse are built-in to the machine.
+          Therefore, for the average user, designers and engineers are not
+          required to think about what happens when one or the other are
+          inaccessible.
+        </p>
+      </div>
     </div>
     <footer>
-        <p>&copy; 2025 Bohdan Karavan</p>
+      <p>&copy; 2025 Bohdan Karavan</p>
     </footer>
+    <div id="imageModal" class="modal">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="expandedImage" />
+    </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
