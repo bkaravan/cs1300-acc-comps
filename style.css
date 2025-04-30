@@ -211,3 +211,62 @@ footer {
     font-size: 18px;
   }
 }
+
+.container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-inline: 12vw;
+  background-color: white;
+}
+
+.titleContainer {
+  margin-top: 30vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  font-size: 8vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 45vh;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.scroll-arrow {
+  position: fixed;
+  left: 50%;
+  top: 55vh;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  animation: bounce 1s infinite;
+  transition: opacity 0.5s ease-out;
+  opacity: 1 !important;
+}
+
+.hidden-arrow {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

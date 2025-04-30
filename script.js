@@ -141,3 +141,33 @@ function expandImage(img) {
       modal.style.display = "none";
     }
   }
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document
+      .querySelectorAll(".hidden")
+      .forEach((el) => observer.observe(el));
+  });
+
+  // Scroll arrow visibility logic
+  const scrollArrow = document.getElementById("scrollArrow");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      scrollArrow.classList.add("hidden-arrow");
+    } else {
+      scrollArrow.classList.remove("hidden-arrow");
+    }
+  });
